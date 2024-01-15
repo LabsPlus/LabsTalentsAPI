@@ -1,10 +1,14 @@
 /* eslint-disable linebreak-style */
 import express from 'express';
 
+
+import {router} from './routes';
+
 const server = express(); 
 
 
-server.get('/', (req,res) => {
-    return res.send('servidor levantado');});
+server.use(express.json());
+
+server.use(router);
 
 export {server} ;
